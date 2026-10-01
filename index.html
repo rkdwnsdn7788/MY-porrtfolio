@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HD현대중공업 생산관리 직무 지원자 강준우의 포트폴리오">
+  <title>강준우 | 생산관리 포트폴리오</title>
+  <style>
+    :root {
+      --navy: #1F3A5F;
+      --sky: #E8F1FA;
+      --white: #FFFFFF;
+      --ink: #172337;
+      --muted: #566476;
+      --line: #D6E0EA;
+      --soft: #F6F9FC;
+      --radius: 8px;
+      --content: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--ink);
+      font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      font-size: 18px;
+      line-height: 1.75;
+      word-break: keep-all;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 100;
+      top: 10px;
+      left: 10px;
+      padding: 10px 14px;
+      border-radius: var(--radius);
+      background: var(--navy);
+      color: var(--white);
+      transform: translateY(-160%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .site-header {
+      position: sticky;
+      z-index: 20;
+      top: 0;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .nav-wrap {
+      width: min(calc(100% - 40px), var(--content));
+      min-height: 72px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      color: var(--navy);
+      font-size: 20px;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: -0.03em;
+    }
+
+    .company-dialog {
+      width: min(calc(100% - 32px), 480px);
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      color: var(--ink);
+    }
+
+    .company-dialog::backdrop {
+      background: rgba(23, 35, 55, 0.55);
+    }
+
+    .dialog-content {
+      padding: 30px;
+    }
+
+    .dialog-content h2 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: 26px;
+      line-height: 1.35;
+    }
+
+    .dialog-content p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .dialog-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .dialog-button {
+      min-width: 92px;
+      padding: 11px 16px;
+      border: 1px solid var(--navy);
+      border-radius: var(--radius);
+      font: inherit;
+      font-size: 16px;
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .dialog-button.cancel {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .dialog-button.confirm {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .dialog-button:hover,
+    .dialog-button:focus-visible {
+      outline: 3px solid var(--sky);
+      outline-offset: 2px;
+    }
+
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-list a {
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-list a:hover,
+    .nav-list a:focus-visible {
+      color: var(--navy);
+    }
+
+    .nav-list .chatbot-link {
+      display: inline-flex;
+      min-height: 42px;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px;
+      border: 1px solid var(--navy);
+      border-radius: var(--radius);
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .nav-list .chatbot-link:hover,
+    .nav-list .chatbot-link:focus-visible {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .menu-button {
+      display: none;
+      padding: 9px 12px;
+      border: 1px solid var(--navy);
+      border-radius: var(--radius);
+      background: var(--white);
+      color: var(--navy);
+      font: inherit;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--content));
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      padding: 88px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+      align-items: center;
+      gap: 72px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 20px;
+      color: var(--navy);
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 28px;
+      height: 3px;
+      background: var(--navy);
+      content: "";
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 24px;
+      color: var(--navy);
+      font-size: clamp(44px, 6vw, 76px);
+      line-height: 1.12;
+      letter-spacing: -0.055em;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: clamp(19px, 2.2vw, 23px);
+    }
+
+    .keyword-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 34px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .keyword-list li {
+      padding: 8px 14px;
+      border: 1px solid #BED1E4;
+      border-radius: var(--radius);
+      background: var(--sky);
+      color: var(--navy);
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border: 1px solid var(--navy);
+      border-radius: var(--radius);
+      font-size: 16px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .button.primary {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .button.secondary {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .focus-panel {
+      padding: 34px;
+      border: 1px solid #BFD0E1;
+      border-radius: var(--radius);
+      background: var(--sky);
+    }
+
+    .focus-panel h2 {
+      margin-bottom: 20px;
+      color: var(--navy);
+      font-size: 20px;
+    }
+
+    .focus-flow {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: focus;
+    }
+
+    .focus-flow li {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      align-items: center;
+      gap: 12px;
+      padding: 14px;
+      border: 1px solid #C9D8E7;
+      border-radius: var(--radius);
+      background: var(--white);
+      color: var(--navy);
+      font-weight: 800;
+      counter-increment: focus;
+    }
+
+    .focus-flow li::before {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: var(--radius);
+      background: var(--navy);
+      color: var(--white);
+      content: "0" counter(focus);
+      font-size: 12px;
+    }
+
+    .section {
+      padding: 104px 0;
+    }
+
+    .section.alt {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 56px;
+      align-items: end;
+      margin-bottom: 48px;
+    }
+
+    .section-number {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      color: var(--navy);
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.25;
+      letter-spacing: -0.04em;
+    }
+
+    .section-lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 19px;
+    }
+
+    .story {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .story-card,
+    .skill-card,
+    .training-card,
+    .license-card,
+    .step-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .story-card {
+      padding: 28px;
+    }
+
+    .story-card strong {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--navy);
+      font-size: 21px;
+    }
+
+    .story-card p,
+    .skill-card p,
+    .training-card p,
+    .license-card p,
+    .step-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .bridge-statement {
+      margin-top: 18px;
+      padding: 26px 30px;
+      border-left: 5px solid var(--navy);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      background: var(--sky);
+      color: var(--navy);
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .skill-card {
+      min-height: 220px;
+      padding: 26px;
+    }
+
+    .skill-label {
+      display: inline-block;
+      margin-bottom: 24px;
+      padding: 6px 10px;
+      border-radius: var(--radius);
+      background: var(--sky);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .skill-card h3,
+    .training-card h3,
+    .license-card h3,
+    .step-card h3 {
+      margin-bottom: 10px;
+      color: var(--navy);
+      font-size: 21px;
+      line-height: 1.4;
+    }
+
+    .project-card {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .project-visual {
+      min-height: 360px;
+      display: grid;
+      place-items: center;
+      padding: 36px;
+      background: var(--sky);
+    }
+
+    .classification-map {
+      width: 100%;
+      max-width: 330px;
+      display: grid;
+      grid-template-columns: 1fr 50px 1fr;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .data-stack {
+      display: grid;
+      gap: 8px;
+    }
+
+    .data-chip {
+      padding: 13px 10px;
+      border: 1px solid #AFC5D9;
+      border-radius: var(--radius);
+      background: var(--white);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .map-arrow {
+      color: var(--navy);
+      font-size: 28px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .project-content {
+      padding: 42px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 16px;
+      color: var(--navy);
+      font-size: 30px;
+      letter-spacing: -0.03em;
+    }
+
+    .project-content > p {
+      color: var(--muted);
+    }
+
+    .notice {
+      margin: 24px 0 0;
+      padding: 16px;
+      border: 1px solid #B9CCE0;
+      border-radius: var(--radius);
+      background: var(--sky);
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .pending {
+      display: grid;
+      gap: 0;
+      margin: 24px 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .pending-row {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 18px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+    }
+
+    .pending-row dt {
+      color: var(--navy);
+      font-weight: 900;
+    }
+
+    .pending-row dd {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .training-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .training-card {
+      padding: 28px;
+    }
+
+    .training-card .index {
+      display: block;
+      margin-bottom: 28px;
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .license-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .license-card {
+      padding: 34px;
+      border-top: 5px solid var(--navy);
+    }
+
+    .license-card h3 {
+      font-size: 25px;
+    }
+
+    .growth-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .step-card {
+      padding: 28px;
+    }
+
+    .step-card .step {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .contact-section {
+      padding: 96px 0;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .contact-section .eyebrow,
+    .contact-section h2 {
+      color: var(--white);
+    }
+
+    .contact-section .eyebrow::before {
+      background: var(--white);
+    }
+
+    .contact-section p {
+      margin: 18px 0 0;
+      color: #D9E5F0;
+    }
+
+    .contact-section .button {
+      border-color: var(--white);
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    footer {
+      padding: 24px 0;
+      border-top: 1px solid #3B5576;
+      background: var(--navy);
+      color: #C6D4E3;
+      font-size: 14px;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    :focus-visible {
+      outline: 3px solid #6E9AC5;
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .nav-list {
+        position: absolute;
+        top: 72px;
+        right: 20px;
+        left: 20px;
+        display: none;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--white);
+      }
+
+      .nav-list.open {
+        display: grid;
+        gap: 14px;
+      }
+
+      .menu-button {
+        display: inline-flex;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid,
+      .section-heading,
+      .project-card,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 44px;
+      }
+
+      .section-heading {
+        gap: 20px;
+      }
+
+      .story,
+      .skill-grid,
+      .training-grid,
+      .growth-steps {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-wrap {
+        justify-items: start;
+      }
+    }
+
+    @media (max-width: 620px) {
+      body {
+        font-size: 17px;
+      }
+
+      .nav-wrap,
+      .container {
+        width: min(calc(100% - 28px), var(--content));
+      }
+
+      .hero,
+      .section,
+      .contact-section {
+        padding: 72px 0;
+      }
+
+      h1 {
+        font-size: 44px;
+      }
+
+      .story,
+      .skill-grid,
+      .training-grid,
+      .license-grid,
+      .growth-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .focus-panel,
+      .project-content,
+      .project-visual {
+        padding: 24px;
+      }
+
+      .project-visual {
+        min-height: 280px;
+      }
+
+      .pending-row {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+
+      .actions,
+      .actions .button,
+      .contact-section .button {
+        width: 100%;
+      }
+
+      footer .container {
+        flex-direction: column;
+        gap: 4px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="주요 메뉴">
+      <a class="brand" id="company-link" href="company-info.html" aria-haspopup="dialog">HD현대중공업</a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-list">메뉴</button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="#motivation">지원 동기</a></li>
+        <li><a href="#fit">직무 역량</a></li>
+        <li><a href="#project">프로젝트</a></li>
+        <li><a href="#preparation">준비 과정</a></li>
+        <li><a href="#contact">연락처</a></li>
+        <li><a class="chatbot-link" href="chatbot.html">챗봇</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <dialog class="company-dialog" id="company-dialog" aria-labelledby="company-dialog-title">
+    <div class="dialog-content">
+      <h2 id="company-dialog-title">회사 정보로 이동</h2>
+      <p>HD현대중공업 회사 정보 사이트로 넘어가시겠습니까?</p>
+      <div class="dialog-actions">
+        <button class="dialog-button cancel" id="dialog-cancel" type="button">취소</button>
+        <a class="dialog-button confirm" href="company-info.html">확인</a>
+      </div>
+    </div>
+  </dialog>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">HD현대중공업 생산관리 지원</p>
+          <h1>안전과 품질을 바탕으로 생산의 흐름을 관리합니다.</h1>
+          <p class="hero-copy">대형 구조물을 이해하는 건축공학 전공자로서, 복잡한 선박 생산 현장을 체계적으로 배워가겠습니다.</p>
+          <ul class="keyword-list" aria-label="핵심 역량">
+            <li>공정 이해</li>
+            <li>안전 중심</li>
+            <li>지속적 개선</li>
+          </ul>
+          <div class="actions">
+            <a class="button primary" href="#motivation">지원 동기 보기</a>
+            <a class="button secondary" href="#fit">역량 보기</a>
+          </div>
+        </div>
+
+        <aside class="focus-panel" aria-label="생산관리 업무 관점">
+          <h2>Production Focus</h2>
+          <ol class="focus-flow">
+            <li>작업 표준</li>
+            <li>공정과 자원</li>
+            <li>안전과 품질</li>
+            <li>소통과 개선</li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="motivation">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-number">01 · MOTIVATION</span>
+            <h2>건축공학에서<br>조선 생산관리로</h2>
+          </div>
+          <p class="section-lead">대형 구조물을 바라보던 시선은 운항되는 복합 시스템인 선박으로 확장되었습니다. 전공에서 출발한 공정·안전·품질의 관점을 조선 생산 현장과 연결하고자 합니다.</p>
+        </div>
+
+        <div class="story">
+          <article class="story-card">
+            <strong>출발점</strong>
+            <p>건축공학을 통해 대형 구조물과 프로젝트 공정을 바라보는 기반을 쌓았습니다.</p>
+          </article>
+          <article class="story-card">
+            <strong>관심의 확장</strong>
+            <p>운항되는 대형 선박과 구조물의 생산 과정에 관심을 갖게 되었습니다.</p>
+          </article>
+          <article class="story-card">
+            <strong>행동으로 확인</strong>
+            <p>조선·전기설비·안전 관련 교육과 자격을 통해 직무 이해를 넓혔습니다.</p>
+          </article>
+        </div>
+
+        <p class="bridge-statement">건축공학에서 익힌 대형 구조물에 대한 관점을 바탕으로, 안전하고 효율적인 선박 생산을 지원하는 관리자로 성장하겠습니다.</p>
+      </div>
+    </section>
+
+    <section class="section alt" id="fit">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-number">02 · JOB FIT</span>
+            <h2>생산관리와 연결되는 준비</h2>
+          </div>
+          <p class="section-lead">자격, 교육, 프로젝트와 도구 활용 경험을 생산관리의 핵심 관점에 맞춰 정리했습니다.</p>
+        </div>
+
+        <div class="skill-grid">
+          <article class="skill-card">
+            <span class="skill-label">안전관리</span>
+            <h3>산업안전기사 · PSM 교육</h3>
+            <p>현장의 위험요인을 우선적으로 고려하는 안전관리 관점을 학습했습니다.</p>
+          </article>
+          <article class="skill-card">
+            <span class="skill-label">품질·개선</span>
+            <h3>6시그마 BB<br>(Black Belt)</h3>
+            <p>문제를 구조화하고 개선 절차를 적용하기 위한 기반을 갖추었습니다.</p>
+          </article>
+          <article class="skill-card">
+            <span class="skill-label">조선업 이해</span>
+            <h3>Future Builder 아카데미</h3>
+            <p>HD현대중공업과 조선산업에 관한 이해를 넓히기 위해 교육을 이수했습니다.</p>
+          </article>
+          <article class="skill-card">
+            <span class="skill-label">설비 이해</span>
+            <h3>HD 선박 전기설비 운용 교육</h3>
+            <p>선박 전기설비와 운용에 관한 교육을 이수했습니다.</p>
+          </article>
+          <article class="skill-card">
+            <span class="skill-label">디지털 활용</span>
+            <h3>AI 활용 이미지 분류</h3>
+            <p>이미지 분류를 주제로 AI 활용 프로젝트를 수행했습니다.</p>
+          </article>
+          <article class="skill-card">
+            <span class="skill-label">기본 도구</span>
+            <h3>CAD · BIM · 문서 도구</h3>
+            <p>CAD, BIM, Excel, Word, 한글을 기본 수준으로 활용합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="project">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-number">03 · PROJECT</span>
+            <h2>AI 활용 이미지 분류 프로젝트</h2>
+          </div>
+          <p class="section-lead">디지털 도구를 활용해 이미지 분류 과제를 수행한 경험입니다. 세부 내용은 확인된 사실만 보완합니다.</p>
+        </div>
+
+        <article class="project-card">
+          <div class="project-visual" aria-hidden="true">
+            <div class="classification-map">
+              <div class="data-stack">
+                <span class="data-chip">IMAGE 01</span>
+                <span class="data-chip">IMAGE 02</span>
+                <span class="data-chip">IMAGE 03</span>
+              </div>
+              <span class="map-arrow">→</span>
+              <div class="data-stack">
+                <span class="data-chip">CLASS A</span>
+                <span class="data-chip">CLASS B</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>분류 기준과 결과를 확인하는 경험</h3>
+            <p>AI를 활용한 이미지 분류 프로젝트를 수행했습니다. 프로젝트의 목적, 역할, 사용 도구와 결과는 구체적인 정보가 확인된 후 업데이트할 예정입니다.</p>
+            <dl class="pending">
+              <div class="pending-row">
+                <dt>프로젝트</dt>
+                <dd>AI 활용 이미지 분류</dd>
+              </div>
+              <div class="pending-row">
+                <dt>상세 내용</dt>
+                <dd>확인된 정보를 기준으로 추후 보완</dd>
+              </div>
+              <div class="pending-row">
+                <dt>직무 연결</dt>
+                <dd>구체적인 수행 내용 확인 후 작성</dd>
+              </div>
+            </dl>
+            <p class="notice">수업 실습에서 AI로 생성한 자료, 회사 공식 자료 아님</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section alt" id="preparation">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-number">04 · PREPARATION</span>
+            <h2>조선업을 향한 준비 과정</h2>
+          </div>
+          <p class="section-lead">관심을 말로만 표현하지 않고 조선·설비·안전에 관한 교육으로 직무 이해를 확장했습니다.</p>
+        </div>
+
+        <div class="training-grid">
+          <article class="training-card">
+            <span class="index">EDUCATION 01</span>
+            <h3>HD현대중공업<br>Future Builder 아카데미</h3>
+            <p>HD현대중공업과 조선산업에 관한 이해를 넓히기 위해 참여한 교육입니다.</p>
+          </article>
+          <article class="training-card">
+            <span class="index">EDUCATION 02</span>
+            <h3>HD 선박<br>전기설비 운용 교육</h3>
+            <p>선박 전기설비와 운용에 관한 기초 이해를 넓히기 위해 이수한 교육입니다.</p>
+          </article>
+          <article class="training-card">
+            <span class="index">EDUCATION 03</span>
+            <h3>안전경영시스템 및<br>PSM 교육</h3>
+            <p>안전관리자의 핵심 업무와 안전관리 체계에 관한 이해를 높이기 위해 이수했습니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="qualification">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-number">05 · QUALIFICATION</span>
+            <h2>안전과 품질을 보는 관점</h2>
+          </div>
+          <p class="section-lead">생산성과 납기는 안전과 품질이 함께 확보될 때 지속될 수 있다고 생각합니다.</p>
+        </div>
+
+        <div class="license-grid">
+          <article class="license-card">
+            <h3>산업안전기사</h3>
+            <p>위험요인을 확인하고 사고를 예방하는 안전 중심의 관리 관점을 갖추기 위해 취득했습니다.</p>
+          </article>
+          <article class="license-card">
+            <h3>6시그마 BB (Black Belt)</h3>
+            <p>문제를 정의하고 원인을 분석해 개선하고 관리하는 체계적인 관점을 학습했습니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="growth">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-number">06 · GROWTH</span>
+            <h2>입사 후 성장 방향</h2>
+          </div>
+          <p class="section-lead">현장을 정확히 이해하는 것부터 시작해 안전과 품질을 바탕으로 개선에 기여하겠습니다.</p>
+        </div>
+
+        <div class="growth-steps">
+          <article class="step-card">
+            <span class="step">START</span>
+            <h3>공정 이해</h3>
+            <p>작업 표준과 선박 생산 공정을 정확히 익히겠습니다.</p>
+          </article>
+          <article class="step-card">
+            <span class="step">CONNECT</span>
+            <h3>현장 소통</h3>
+            <p>작업자와 유관 부서의 의견을 경청하며 일정과 자원 관리를 지원하겠습니다.</p>
+          </article>
+          <article class="step-card">
+            <span class="step">IMPROVE</span>
+            <h3>지속적 개선</h3>
+            <p>데이터와 개선 기법을 활용해 안전성과 생산성 향상에 기여하겠습니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container contact-wrap">
+        <div>
+          <p class="eyebrow">CONTACT</p>
+          <h2>생산의 흐름을 책임감 있게 배우겠습니다.</h2>
+          <p>강준우 · HD현대중공업 생산관리 지원</p>
+        </div>
+        <a class="button" href="tel:01075100827" aria-label="강준우에게 전화하기">010-7510-0827</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>강준우 · 생산관리 포트폴리오</span>
+      <span>확인된 정보만 담았습니다.</span>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const navList = document.querySelector('.nav-list');
+    const companyLink = document.querySelector('#company-link');
+    const companyDialog = document.querySelector('#company-dialog');
+    const dialogCancel = document.querySelector('#dialog-cancel');
+
+    companyLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      companyDialog.showModal();
+    });
+
+    dialogCancel.addEventListener('click', () => {
+      companyDialog.close();
+    });
+
+    companyDialog.addEventListener('click', (event) => {
+      if (event.target === companyDialog) {
+        companyDialog.close();
+      }
+    });
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = navList.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.textContent = isOpen ? '닫기' : '메뉴';
+    });
+
+    navList.addEventListener('click', (event) => {
+      if (event.target.matches('a')) {
+        navList.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.textContent = '메뉴';
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) {
+        navList.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.textContent = '메뉴';
+      }
+    });
+  </script>
+</body>
+</html>
