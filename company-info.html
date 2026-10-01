@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HD현대중공업의 역사, 주요 사업, 재무 정보">
+  <title>HD현대중공업 | 회사 정보</title>
+  <style>
+    :root {
+      --navy: #1F3A5F;
+      --sky: #E8F1FA;
+      --white: #FFFFFF;
+      --ink: #172337;
+      --muted: #566476;
+      --line: #D6E0EA;
+      --soft: #F6F9FC;
+      --radius: 8px;
+      --content: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--ink);
+      font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      font-size: 18px;
+      line-height: 1.75;
+      word-break: keep-all;
+    }
+
+    a { color: inherit; }
+
+    .skip-link {
+      position: fixed;
+      z-index: 100;
+      top: 10px;
+      left: 10px;
+      padding: 10px 14px;
+      border-radius: var(--radius);
+      background: var(--navy);
+      color: var(--white);
+      transform: translateY(-160%);
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    .site-header {
+      position: sticky;
+      z-index: 20;
+      top: 0;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .nav-wrap,
+    .container {
+      width: min(calc(100% - 40px), var(--content));
+      margin: 0 auto;
+    }
+
+    .nav-wrap {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      color: var(--navy);
+      font-size: 20px;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: -0.03em;
+    }
+
+    .back-button,
+    .primary-button {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 16px;
+      border: 1px solid var(--navy);
+      border-radius: var(--radius);
+      font-size: 15px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .back-button {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .primary-button {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .back-button:hover,
+    .back-button:focus-visible,
+    .primary-button:hover,
+    .primary-button:focus-visible {
+      outline: 3px solid var(--sky);
+      outline-offset: 2px;
+    }
+
+    .hero {
+      padding: 86px 0 72px;
+      border-bottom: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--navy);
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    h1,
+    h2,
+    h3,
+    p { margin-top: 0; }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 20px;
+      color: var(--navy);
+      font-size: clamp(42px, 7vw, 68px);
+      line-height: 1.14;
+      letter-spacing: -0.05em;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: 20px;
+    }
+
+    .section {
+      padding: 84px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section:nth-child(even) { background: var(--soft); }
+
+    .section-header {
+      max-width: 720px;
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      margin-bottom: 12px;
+      color: var(--navy);
+      font-size: clamp(30px, 5vw, 44px);
+      line-height: 1.25;
+      letter-spacing: -0.04em;
+    }
+
+    .section-header p { color: var(--muted); }
+
+    .timeline,
+    .business-grid,
+    .financial-grid {
+      display: grid;
+      gap: 18px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .timeline { grid-template-columns: repeat(3, 1fr); }
+    .business-grid,
+    .financial-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .card {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .year,
+    .card-label {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--navy);
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: var(--navy);
+      font-size: 24px;
+      line-height: 1.35;
+    }
+
+    .card p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .amount {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.04em;
+    }
+
+    .data-note,
+    .source-links {
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .source-links a {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 30px 0;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .footer-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    footer .back-button {
+      border-color: var(--white);
+      background: var(--white);
+    }
+
+    @media (max-width: 760px) {
+      body { font-size: 17px; }
+      .nav-wrap, .container { width: min(calc(100% - 28px), var(--content)); }
+      .nav-wrap { min-height: 66px; }
+      .brand { font-size: 18px; }
+      .back-button { padding: 8px 12px; }
+      .hero { padding: 62px 0 54px; }
+      .hero-copy { font-size: 18px; }
+      .section { padding: 60px 0; }
+      .timeline,
+      .business-grid,
+      .financial-grid { grid-template-columns: 1fr; }
+      .card { padding: 22px; }
+      .footer-wrap { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="회사 정보 페이지">
+      <a class="brand" href="#top">HD현대중공업</a>
+      <a class="back-button" href="index.html">포트폴리오로 돌아가기</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container">
+        <p class="eyebrow">COMPANY INFORMATION</p>
+        <h1>바다의 미래를 만드는 종합중공업 기업</h1>
+        <p class="hero-copy">HD현대중공업의 성장 과정과 핵심 사업, 주요 재무 정보를 간결하게 정리했습니다.</p>
+        <a class="primary-button" href="#history">회사 정보 보기</a>
+      </div>
+    </section>
+
+    <section class="section" id="history">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">HISTORY</p>
+          <h2>현대중공업 역사</h2>
+          <p>울산에서 시작한 조선소는 세계 조선산업을 이끄는 종합중공업 기업으로 성장했습니다.</p>
+        </div>
+        <ol class="timeline">
+          <li class="card">
+            <span class="year">1972</span>
+            <h3>울산조선소 기공</h3>
+            <p>울산 미포만에서 조선소 건설을 시작하며 대한민국 조선산업의 기반을 세웠습니다.</p>
+          </li>
+          <li class="card">
+            <span class="year">1974</span>
+            <h3>조선소와 첫 선박 완성</h3>
+            <p>조선소 1단계를 준공하고 26만 톤급 초대형 원유운반선 두 척을 완성했습니다.</p>
+          </li>
+          <li class="card">
+            <span class="year">1983–현재</span>
+            <h3>글로벌 기업으로 성장</h3>
+            <p>선박 건조량 세계 1위에 오른 뒤 친환경 선박과 디지털 해양 기술로 영역을 넓히고 있습니다.</p>
+          </li>
+        </ol>
+        <p class="source-links">출처: <a href="https://hd-hhi.com/kr/company/heritage/history" target="_blank" rel="noopener noreferrer">HD현대중공업 공식 연혁</a></p>
+      </div>
+    </section>
+
+    <section class="section" id="business">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">BUSINESS</p>
+          <h2>사업 종류</h2>
+          <p>축적된 조선 기술을 바탕으로 세 가지 핵심 사업을 운영합니다.</p>
+        </div>
+        <div class="business-grid">
+          <article class="card">
+            <span class="card-label">01</span>
+            <h3>조선</h3>
+            <p>LNG선, 컨테이너선, 유조선과 함정 등 다양한 고부가가치 선박을 건조합니다.</p>
+          </article>
+          <article class="card">
+            <span class="card-label">02</span>
+            <h3>해양에너지</h3>
+            <p>해상 구조물과 에너지 생산 설비를 설계·제작해 해양 자원 개발을 지원합니다.</p>
+          </article>
+          <article class="card">
+            <span class="card-label">03</span>
+            <h3>엔진기계</h3>
+            <p>선박용 대형엔진과 자체 개발한 HiMSEN 엔진, 발전 설비를 공급합니다.</p>
+          </article>
+        </div>
+        <p class="source-links">출처: <a href="https://hd-hhi.com/kr/company/overview/company-overview" target="_blank" rel="noopener noreferrer">HD현대중공업 기업 개요</a></p>
+      </div>
+    </section>
+
+    <section class="section" id="financial">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">FINANCIALS</p>
+          <h2>재무 정보</h2>
+          <p>2025년 사업보고서 기준의 핵심 수치입니다.</p>
+        </div>
+        <div class="financial-grid">
+          <article class="card">
+            <span class="card-label">매출액</span>
+            <strong class="amount">17조 5,806억 원</strong>
+            <p>연결재무제표 기준</p>
+          </article>
+          <article class="card">
+            <span class="card-label">영업이익</span>
+            <strong class="amount">2조 375억 원</strong>
+            <p>연결재무제표 기준</p>
+          </article>
+          <article class="card">
+            <span class="card-label">수주잔고</span>
+            <strong class="amount">56조 3,845억 원</strong>
+            <p>2025년 12월 31일 기준</p>
+          </article>
+        </div>
+        <p class="data-note">자료: <code>data/financials.json</code> · OpenDART 2025년 사업보고서 기반 · 금액은 읽기 쉽게 억 원 단위에서 반올림했습니다.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <span>HD현대중공업 회사 정보</span>
+      <a class="back-button" href="index.html">포트폴리오로 돌아가기</a>
+    </div>
+  </footer>
+</body>
+</html>
