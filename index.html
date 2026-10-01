@@ -514,6 +514,30 @@
       gap: 12px;
     }
 
+    .project-figure {
+      width: 100%;
+      max-width: 390px;
+      margin: 0;
+    }
+
+    .project-figure svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid #AFC5D9;
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .project-figure figcaption {
+      margin-top: 12px;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.5;
+      text-align: center;
+    }
+
     .data-stack {
       display: grid;
       gap: 8px;
@@ -688,6 +712,341 @@
       gap: 20px;
     }
 
+    /* Refined visual system */
+    body {
+      letter-spacing: -0.012em;
+      text-rendering: optimizeLegibility;
+    }
+
+    .site-header {
+      border-bottom-color: rgba(31, 58, 95, 0.12);
+      box-shadow: 0 8px 24px rgba(31, 58, 95, 0.06);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-wrap {
+      min-height: 78px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 21px;
+      letter-spacing: -0.04em;
+    }
+
+    .brand::before {
+      width: 8px;
+      height: 28px;
+      border-radius: var(--radius);
+      background: var(--navy);
+      content: "";
+    }
+
+    .nav-list a:not(.chatbot-link) {
+      position: relative;
+      padding: 27px 0 24px;
+    }
+
+    .nav-list a:not(.chatbot-link)::after {
+      position: absolute;
+      right: 0;
+      bottom: 18px;
+      left: 0;
+      height: 2px;
+      border-radius: var(--radius);
+      background: var(--navy);
+      content: "";
+      opacity: 0;
+      transform: scaleX(0.35);
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+
+    .nav-list a:not(.chatbot-link):hover::after,
+    .nav-list a:not(.chatbot-link):focus-visible::after {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+    .nav-list .chatbot-link {
+      padding-inline: 18px;
+      box-shadow: 0 6px 16px rgba(31, 58, 95, 0.14);
+      transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+
+    .nav-list .chatbot-link:hover,
+    .nav-list .chatbot-link:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 680px;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      width: min(38vw, 560px);
+      height: 100%;
+      border-left: 1px solid #D7E4F0;
+      background: #F6F9FC;
+      content: "";
+    }
+
+    .hero-grid {
+      gap: clamp(48px, 7vw, 88px);
+    }
+
+    .eyebrow {
+      margin-bottom: 24px;
+      font-size: 14px;
+      letter-spacing: 0.14em;
+    }
+
+    .eyebrow::before {
+      width: 38px;
+      height: 2px;
+    }
+
+    h1 {
+      margin-bottom: 28px;
+      font-weight: 850;
+      line-height: 1.08;
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      color: #4D5E72;
+      line-height: 1.7;
+    }
+
+    .keyword-list {
+      gap: 8px;
+      margin-bottom: 0;
+    }
+
+    .keyword-list li {
+      padding: 9px 16px;
+      border-color: #C8D9E9;
+      background: #F4F8FC;
+      font-size: 14px;
+      letter-spacing: 0.01em;
+    }
+
+    .focus-panel {
+      position: relative;
+      padding: 38px;
+      border-color: #B9CDE1;
+      border-top: 5px solid var(--navy);
+      background: var(--sky);
+      box-shadow: 0 18px 44px rgba(31, 58, 95, 0.1);
+    }
+
+    .focus-panel h2 {
+      margin-bottom: 24px;
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .focus-flow {
+      gap: 12px;
+    }
+
+    .focus-flow li {
+      padding: 16px;
+      border-color: #C4D5E5;
+      box-shadow: 0 5px 14px rgba(31, 58, 95, 0.05);
+      transition: border-color 180ms ease, transform 180ms ease;
+    }
+
+    .focus-flow li:hover {
+      border-color: #8EAAC5;
+      transform: translateX(4px);
+    }
+
+    .section {
+      padding: 116px 0;
+    }
+
+    .section-heading {
+      position: relative;
+      align-items: end;
+      margin-bottom: 54px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading::after {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 84px;
+      height: 3px;
+      border-radius: var(--radius);
+      background: var(--navy);
+      content: "";
+    }
+
+    .section-number {
+      margin-bottom: 12px;
+      font-size: 13px;
+      letter-spacing: 0.16em;
+    }
+
+    h2 {
+      font-weight: 850;
+      line-height: 1.18;
+    }
+
+    .section-lead {
+      max-width: 680px;
+      line-height: 1.85;
+    }
+
+    .story,
+    .skill-grid,
+    .training-grid,
+    .growth-steps {
+      gap: 20px;
+    }
+
+    .story-card,
+    .skill-card,
+    .training-card,
+    .license-card,
+    .step-card,
+    .project-card {
+      border-color: #D7E2ED;
+      box-shadow: 0 10px 30px rgba(31, 58, 95, 0.06);
+    }
+
+    .story-card,
+    .skill-card,
+    .training-card,
+    .license-card,
+    .step-card {
+      position: relative;
+      overflow: hidden;
+      transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    }
+
+    .story-card:hover,
+    .skill-card:hover,
+    .training-card:hover,
+    .license-card:hover,
+    .step-card:hover {
+      border-color: #AFC5D9;
+      box-shadow: 0 16px 38px rgba(31, 58, 95, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .story-card::before,
+    .skill-card::before,
+    .training-card::before,
+    .step-card::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 4px;
+      background: var(--sky);
+      content: "";
+    }
+
+    .story-card,
+    .training-card,
+    .step-card {
+      padding: 32px;
+    }
+
+    .skill-card {
+      min-height: 232px;
+      padding: 30px;
+    }
+
+    .skill-label {
+      margin-bottom: 26px;
+      border: 1px solid #CDDEED;
+      background: #F1F6FB;
+      letter-spacing: 0.04em;
+    }
+
+    .bridge-statement {
+      margin-top: 22px;
+      padding: 30px 34px;
+      border-left-width: 6px;
+      background: #F0F6FB;
+      line-height: 1.7;
+    }
+
+    .project-card {
+      border-top: 5px solid var(--navy);
+    }
+
+    .project-visual {
+      border-right: 1px solid #D2DFEB;
+      background: #F0F6FB;
+    }
+
+    .project-content {
+      padding: 48px;
+    }
+
+    .notice {
+      border-left: 5px solid var(--navy);
+      background: #F1F6FB;
+    }
+
+    .training-card .index,
+    .step-card .step {
+      display: inline-flex;
+      min-width: 44px;
+      min-height: 30px;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 10px;
+      border-radius: var(--radius);
+      background: var(--sky);
+    }
+
+    .license-grid {
+      gap: 20px;
+    }
+
+    .license-card {
+      padding: 38px;
+      border-top-width: 5px;
+    }
+
+    .contact-section {
+      position: relative;
+      padding: 106px 0;
+      border-top: 8px solid var(--sky);
+    }
+
+    .contact-section .button {
+      min-width: 150px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+
+    .contact-section .button:hover,
+    .contact-section .button:focus-visible {
+      background: var(--sky);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      padding: 28px 0;
+      border-top-color: #4B6482;
+    }
+
     :focus-visible {
       outline: 3px solid #6E9AC5;
       outline-offset: 3px;
@@ -711,12 +1070,24 @@
         gap: 14px;
       }
 
+      .nav-list a:not(.chatbot-link) {
+        padding: 4px 0;
+      }
+
+      .nav-list a:not(.chatbot-link)::after {
+        display: none;
+      }
+
       .menu-button {
         display: inline-flex;
       }
 
       .hero {
         min-height: auto;
+      }
+
+      .hero::before {
+        width: 28%;
       }
 
       .hero-grid,
@@ -762,6 +1133,10 @@
         padding: 72px 0;
       }
 
+      .hero::before {
+        display: none;
+      }
+
       h1 {
         font-size: 44px;
       }
@@ -778,6 +1153,19 @@
       .project-content,
       .project-visual {
         padding: 24px;
+      }
+
+      .section-heading {
+        margin-bottom: 36px;
+        padding-bottom: 24px;
+      }
+
+      .story-card,
+      .skill-card,
+      .training-card,
+      .license-card,
+      .step-card {
+        padding: 26px;
       }
 
       .project-visual {
@@ -804,6 +1192,12 @@
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
@@ -849,10 +1243,6 @@
             <li>안전 중심</li>
             <li>지속적 개선</li>
           </ul>
-          <div class="actions">
-            <a class="button primary" href="#motivation">지원 동기 보기</a>
-            <a class="button secondary" href="#fit">역량 보기</a>
-          </div>
         </div>
 
         <aside class="focus-panel" aria-label="생산관리 업무 관점">
@@ -948,39 +1338,58 @@
             <span class="section-number">03 · PROJECT</span>
             <h2>AI 활용 이미지 분류 프로젝트</h2>
           </div>
-          <p class="section-lead">디지털 도구를 활용해 이미지 분류 과제를 수행한 경험입니다. 세부 내용은 확인된 사실만 보완합니다.</p>
+          <p class="section-lead">용접부 이미지를 5개 클래스로 분류하고, 실험 조건과 성능 변화를 비교한 CNN 실습 프로젝트입니다.</p>
         </div>
 
         <article class="project-card">
-          <div class="project-visual" aria-hidden="true">
-            <div class="classification-map">
-              <div class="data-stack">
-                <span class="data-chip">IMAGE 01</span>
-                <span class="data-chip">IMAGE 02</span>
-                <span class="data-chip">IMAGE 03</span>
-              </div>
-              <span class="map-arrow">→</span>
-              <div class="data-stack">
-                <span class="data-chip">CLASS A</span>
-                <span class="data-chip">CLASS B</span>
-              </div>
-            </div>
+          <div class="project-visual">
+            <figure class="project-figure">
+              <svg viewBox="0 0 390 330" role="img" aria-labelledby="welding-chart-title welding-chart-desc">
+                <title id="welding-chart-title">용접 결함 이미지 분류 성능 비교</title>
+                <desc id="welding-chart-desc">기준 실험 대비 최고 성능 실험 10의 Macro F1과 정확도 상승을 나타낸 그래프</desc>
+                <rect x="24" y="24" width="342" height="282" rx="8" fill="#FFFFFF" stroke="#D7E0E8" />
+                <text x="44" y="57" fill="#1F3A5F" font-size="20" font-weight="800">용접 결함 5종 분류</text>
+                <text x="44" y="80" fill="#5D6B7B" font-size="12">기공 · 언더컷 · 용입부족 · 융합불량 · 정상</text>
+
+                <text x="44" y="119" fill="#1F3A5F" font-size="13" font-weight="800">Macro F1</text>
+                <rect x="44" y="132" width="272" height="18" rx="8" fill="#E8F1FA" />
+                <rect x="44" y="132" width="231" height="18" rx="8" fill="#8EACC8" />
+                <text x="324" y="146" fill="#5D6B7B" font-size="12">0.8509</text>
+                <rect x="44" y="160" width="272" height="18" rx="8" fill="#E8F1FA" />
+                <rect x="44" y="160" width="253" height="18" rx="8" fill="#1F3A5F" />
+                <text x="324" y="174" fill="#1F3A5F" font-size="12" font-weight="800">0.9295</text>
+
+                <text x="44" y="217" fill="#1F3A5F" font-size="13" font-weight="800">Accuracy</text>
+                <rect x="44" y="230" width="272" height="18" rx="8" fill="#E8F1FA" />
+                <rect x="44" y="230" width="231" height="18" rx="8" fill="#8EACC8" />
+                <text x="324" y="244" fill="#5D6B7B" font-size="12">0.850</text>
+                <rect x="44" y="258" width="272" height="18" rx="8" fill="#E8F1FA" />
+                <rect x="44" y="258" width="253" height="18" rx="8" fill="#1F3A5F" />
+                <text x="324" y="272" fill="#1F3A5F" font-size="12" font-weight="800">0.930</text>
+
+                <circle cx="52" cy="294" r="5" fill="#8EACC8" />
+                <text x="64" y="298" fill="#5D6B7B" font-size="11">기준</text>
+                <circle cx="116" cy="294" r="5" fill="#1F3A5F" />
+                <text x="128" y="298" fill="#5D6B7B" font-size="11">실험 10(최고)</text>
+              </svg>
+              <figcaption>기준 실험과 최고 성능 실험 10 비교</figcaption>
+            </figure>
           </div>
           <div class="project-content">
-            <h3>분류 기준과 결과를 확인하는 경험</h3>
-            <p>AI를 활용한 이미지 분류 프로젝트를 수행했습니다. 프로젝트의 목적, 역할, 사용 도구와 결과는 구체적인 정보가 확인된 후 업데이트할 예정입니다.</p>
+            <h3>실험 조건을 조정해 분류 성능을 개선한 경험</h3>
+            <p>용접부 이미지를 기공, 언더컷, 용입부족, 융합불량, 정상의 5개 클래스로 분류하는 CNN 실습을 수행했습니다. 기준 실험 이후 10회의 개선 실험을 진행하며 설정과 성능 지표를 비교했습니다.</p>
             <dl class="pending">
               <div class="pending-row">
                 <dt>프로젝트</dt>
-                <dd>AI 활용 이미지 분류</dd>
+                <dd>CNN 기반 용접 결함 이미지 5종 분류</dd>
               </div>
               <div class="pending-row">
                 <dt>상세 내용</dt>
-                <dd>확인된 정보를 기준으로 추후 보완</dd>
+                <dd>이미지 크기, 배치 크기, CNN 채널, 학습률, Epoch, 스케줄러와 손실 함수를 단계적으로 조정했습니다. 실험 10에서 Macro F1 0.9295, Accuracy 0.930으로 최고 성능을 기록했습니다.</dd>
               </div>
               <div class="pending-row">
                 <dt>직무 연결</dt>
-                <dd>구체적인 수행 내용 확인 후 작성</dd>
+                <dd>조건별 결과를 기록하고 품질 지표로 비교한 경험은 생산관리 직무의 불량 원인 분석, 공정 조건 개선, 개선 결과 공유 업무와 연결됩니다.</dd>
               </div>
             </dl>
             <p class="notice">수업 실습에서 AI로 생성한 자료, 회사 공식 자료 아님</p>
